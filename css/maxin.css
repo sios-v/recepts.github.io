@@ -1,0 +1,1216 @@
+@import url(https://use.fontawesome.com/releases/v5.0.6/css/all.css);
+@import url(https://fonts.googleapis.com/css?family=Oswald:400|Raleway:400,700,400italic,700italic);
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #1d1f20;
+    color: #e5e5e5;
+    font: 16px/1.25 'Raleway', sans-serif;
+}
+
+h1 {
+    font-family: 'Oswald', sans-serif;
+    text-align: center;
+    font-size: 50px;
+}
+
+a {
+    color: #a2ed56;
+}
+
+a:hover {
+    color: #83e4e2;
+    text-decoration: none;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 80em;
+}
+
+main .container {
+    padding: 1em;
+}
+
+p {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 40em;
+}
+
+.screen-reader-text {
+    clip: rect(1px 1px 1px 1px);
+    clip: rect(1px, 1px, 1px, 1px);
+    height: 1px;
+    overflow: hidden;
+    position: absolute !important;
+    width: 1px;
+}
+
+
+
+/************************************************/
+/****************** NAVIGATION ******************/
+/************************************************/
+nav {
+    background: #e5e5e5;
+    color: #1d1f20;
+    left: 0;
+    position: relative;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+}
+
+/*** INPUT ***/
+nav input {
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+}
+
+/*** LABEL ***/
+nav label {
+    cursor: pointer;
+    display: block;
+    font: 2em/1 'Oswald', sans-serif;
+}
+
+/* Hamburger Icon */
+#menu-icon,
+#menu-icon:before,
+#menu-icon:after {
+    background: #1d1f20;
+    border-radius: 0.05em;
+    height: 0.2em;
+    transition: all 0.2s ease-in-out;
+    width: 100%;
+}
+
+#menu-icon {
+    display: inline-block;
+    margin: 1.5em -5em;
+    max-width: 1em;
+    position: relative;
+}
+
+nav label #menu-icon {
+    float: right;
+}
+
+#menu-icon:before,
+#menu-icon:after {
+    content: '';
+    left: 0;
+    position: absolute;
+}
+
+#menu-icon:before {
+    top: -0.4em;
+}
+
+#menu-icon:after {
+    bottom: -0.4em;
+}
+
+/* Close Icon */
+nav input[type=checkbox]:checked + label #menu-icon {
+    background: transparent;
+}
+
+nav input[type=checkbox]:checked + label #menu-icon:before {
+    top: 0;
+    transform: rotate(-45deg);
+}
+
+nav input[type=checkbox]:checked + label #menu-icon:after {
+    bottom: 0;
+    transform: rotate(45deg);
+}
+
+
+/*** MENU ***/
+/* Overlay */
+nav input:checked ~ #overlay {
+    background: #e5e5e5;
+    bottom: 0;
+    left: 0;
+    height: 100vh;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 0vw;
+    z-index: -1;
+}
+
+/* List */
+nav ul {
+    font-size: 1.5em;
+    list-style: none;
+    margin: 0;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    padding: 0;
+    text-align: center;
+}
+
+nav input:checked ~ ul {
+    margin: 1em;
+    max-height: inherit;
+    opacity: 1;
+}
+
+nav ul > li {
+    margin: 0.5em 0;
+}
+
+nav ul a {
+    color: #1d1f20!important;
+    text-decoration: none;
+}
+
+nav ul a:hover {
+    text-decoration: underline;
+}
+
+/* Social Media */
+nav ul#social-media > li {
+    display: inline-block;
+    font-size: 1.5em;
+    margin: 0.5em;
+}
+footer{
+            text-align: center;
+            background: #e5e5e5;
+            margin: none;
+            padding: 15px 15px;
+            color: #1d1f20;
+            font: 1.3em/1 'Oswald', sans-serif;
+            margin-top:auto ;
+
+        }
+.card {
+  position: relative;
+  width: 320px;
+  height: 480px;
+  background: #449f3e;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  width: 100%;
+  height: 100%;
+  background: #ffffff;;
+  transform: skewY(345deg);
+  transition: 0.5s;
+}
+
+.card:hover::before {
+  top: -70%;
+  transform: skewY(390deg);
+}
+
+.card::after {
+  content: "PIZZA";
+  position: absolute;
+  bottom: 0;
+  left: 25px;
+  font-weight: 600;
+  font-size: 6em;
+  color: rgb(255 255 255 / 10%);;
+}
+
+.card .imgBox {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+  z-index: 1;
+}
+
+.card .contentBox {
+  position: relative;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 2;
+}
+
+.card .contentBox h3 {
+  font-size: 18px;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.card .contentBox .price {
+  font-size: 24px;
+  color: white;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.card .contentBox .buy {
+  position: relative;
+  top: 100px;
+  opacity: 0;
+  padding: 10px 30px;
+  margin-top: 15px;
+  color: #000000;
+  text-decoration: none;
+  background: #ffffff;
+  border-radius: 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: 0.5s;
+  padding-left: 20px;
+}
+
+.card:hover .contentBox .buy {
+  top: 0;
+  opacity: 1;
+}
+
+.card2 {
+  position: relative;
+  width: 320px;
+  height: 480px;
+  background: #b1af7e;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.card2::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  width: 100%;
+  height: 100%;
+  background: #ffffff;;
+  transform: skewY(345deg);
+  transition: 0.5s;
+}
+
+.card2:hover::before {
+  top: -70%;
+  transform: skewY(390deg);
+}
+
+.card2::after {
+  content: "SAMSA";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  font-weight: 600;
+  font-size: 6em;
+  color: rgb(255 255 255 / 10%);;
+}
+
+.card2 .imgBox2 {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+  z-index: 1;
+}
+/*
+.card .imgBox img {
+    max-width: 100%;
+    
+    transition: .5s;
+}
+
+.card:hover .imgBox img {
+    max-width: 50%;
+      
+}
+*/
+.card2 .contentBox2 {
+  position: relative;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 2;
+}
+
+.card2 .contentBox2 h3 {
+  font-size: 18px;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.card2 .contentBox2 .price2 {
+  font-size: 24px;
+  color: white;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.card2 .contentBox2 .buy2 {
+  position: relative;
+  top: 100px;
+  opacity: 0;
+  padding: 10px 30px;
+  margin-top: 15px;
+  color: #000000;
+  text-decoration: none;
+  background: #ffffff;
+  border-radius: 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: 0.5s;
+  padding-left: 20px;
+}
+
+.card2:hover .contentBox2 .buy2 {
+  top: 0;
+  opacity: 1;
+}
+
+.card3 {
+  position: relative;
+  width: 320px;
+  height: 480px;
+  background: #937297d4;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.card3::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  width: 100%;
+  height: 100%;
+  background: #ffffff;;
+  transform: skewY(345deg);
+  transition: 0.5s;
+}
+
+.card3:hover::before {
+  top: -70%;
+  transform: skewY(390deg);
+}
+
+.card3::after {
+  content: "HINK";
+  position: absolute;
+  bottom: 0;
+  left: 42px;
+  font-weight: 600;
+  font-size: 6em;
+  color: rgb(255 255 255 / 10%);;
+}
+
+.card3 .imgBox3 {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+  z-index: 1;
+}
+/*
+.card .imgBox img {
+    max-width: 100%;
+    
+    transition: .5s;
+}
+
+.card:hover .imgBox img {
+    max-width: 50%;
+      
+}
+*/
+.card3 .contentBox3 {
+  position: relative;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 2;
+}
+
+.card3 .contentBox3 h3 {
+  font-size: 18px;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.card3 .contentBox3 .price3 {
+  font-size: 24px;
+  color: white;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.card3 .contentBox3 .buy3 {
+  position: relative;
+  top: 100px;
+  opacity: 0;
+  padding: 10px 30px;
+  margin-top: 15px;
+  color: #000000;
+  text-decoration: none;
+  background: #ffffff;
+  border-radius: 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: 0.5s;
+  padding-left: 20px;
+}
+
+.card3:hover .contentBox3 .buy3 {
+  top: 0;
+  opacity: 1;
+}
+
+.card4{
+  position: relative;
+  width: 320px;
+  height: 480px;
+  background: #a95353;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.card4::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  width: 100%;
+  height: 100%;
+  background: #ffffff;;
+  transform: skewY(345deg);
+  transition: 0.5s;
+}
+
+.card4:hover::before {
+  top: -70%;
+  transform: skewY(390deg);
+}
+
+.card4::after {
+  content: "TVIST";
+  position: absolute;
+  bottom: 0;
+  left: 25px;
+  font-weight: 600;
+  font-size: 6em;
+  color: rgb(255 255 255 / 10%);;
+}
+
+.card4 .imgBox4 {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+  z-index: 1;
+}
+/*
+.card .imgBox img {
+    max-width: 100%;
+    
+    transition: .5s;
+}
+
+.card:hover .imgBox img {
+    max-width: 50%;
+      
+}
+*/
+.card4 .contentBox4 {
+  position: relative;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 2;
+}
+
+.card4 .contentBox4 h3 {
+  font-size: 18px;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.card4 .contentBox4 .price4 {
+  font-size: 24px;
+  color: white;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.card4 .contentBox4 .buy4 {
+  position: relative;
+  top: 100px;
+  opacity: 0;
+  padding: 10px 30px;
+  margin-top: 15px;
+  color: #000000;
+  text-decoration: none;
+  background: #ffffff;
+  border-radius: 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: 0.5s;
+  padding-left: 20px;
+}
+
+.card4:hover .contentBox4 .buy4 {
+  top: 0;
+  opacity: 1;
+}
+
+.card5 {
+  position: relative;
+  width: 320px;
+  height: 480px;
+  background: #5263a3;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.card5::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  width: 100%;
+  height: 100%;
+  background: #ffffff;;
+  transform: skewY(345deg);
+  transition: 0.5s;
+}
+
+.card5:hover::before {
+  top: -70%;
+  transform: skewY(390deg);
+}
+
+.card5::after {
+  content: "ARAB";
+  position: absolute;
+  bottom: 0;
+  left: 25px;
+  font-weight: 600;
+  font-size: 6em;
+  color: rgb(255 255 255 / 10%);;
+}
+
+
+.card5 .imgBox5 {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+  z-index: 1;
+}
+/*
+.card .imgBox img {
+    max-width: 100%;
+    
+    transition: .5s;
+}
+
+.card:hover .imgBox img {
+    max-width: 50%;
+      
+}
+*/
+.card5 .contentBox5 {
+  position: relative;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 2;
+}
+
+.card5 .contentBox5 h3 {
+  font-size: 18px;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.card5 .contentBox5 .price5 {
+  font-size: 24px;
+  color: white;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.card5 .contentBox5 .buy5 {
+  position: relative;
+  top: 100px;
+  opacity: 0;
+  padding: 10px 30px;
+  margin-top: 15px;
+  color: #000000;
+  text-decoration: none;
+  background: #ffffff;
+  border-radius: 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: 0.5s;
+  padding-left: 20px;
+}
+
+.card5:hover .contentBox5 .buy5 {
+  top: 0;
+  opacity: 1;
+}
+
+.card6 {
+  position: relative;
+  width: 320px;
+  height: 480px;
+  background: #a1824b;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.card6::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  width: 100%;
+  height: 100%;
+  background: #ffffff;;
+  transform: skewY(345deg);
+  transition: 0.5s;
+}
+
+.card6:hover::before {
+  top: -70%;
+  transform: skewY(390deg);
+}
+
+.card6::after {
+  content: "SHAW";
+  position: absolute;
+  bottom: 0;
+  left: 10px;
+  font-weight: 600;
+  font-size: 6em;
+  color: rgb(255 255 255 / 10%);;
+}
+
+.card6 .imgBox6 {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+  z-index: 1;
+}
+/*
+.card .imgBox img {
+    max-width: 100%;
+    
+    transition: .5s;
+}
+
+.card:hover .imgBox img {
+    max-width: 50%;
+      
+}
+*/
+.card6 .contentBox6 {
+  position: relative;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 2;
+}
+
+.card6 .contentBox6 h3 {
+  font-size: 18px;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.card6 .contentBox6 .price6 {
+  font-size: 24px;
+  color: white;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.card6 .contentBox6 .buy6 {
+  position: relative;
+  top: 100px;
+  opacity: 0;
+  padding: 10px 30px;
+  margin-top: 15px;
+  color: #000000;
+  text-decoration: none;
+  background: #ffffff;
+  border-radius: 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: 0.5s;
+  padding-left: 20px;
+}
+
+.card6:hover .contentBox6 .buy6 {
+  top: 0;
+  opacity: 1;
+}
+
+.card7 {
+  position: relative;
+  width: 320px;
+  height: 480px;
+  background: #bfb932;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.card7::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  width: 100%;
+  height: 100%;
+  background: #ffffff;;
+  transform: skewY(345deg);
+  transition: 0.5s;
+}
+
+.card7:hover::before {
+  top: -70%;
+  transform: skewY(390deg);
+}
+
+.card7::after {
+  content: "DOLMA";
+  position: absolute;
+  bottom: 0;
+  left: -15PX;
+  font-weight: 600;
+  font-size: 6em;
+  color: rgb(255 255 255 / 10%);;
+}
+
+.card7 .imgBox7 {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+  z-index: 1;
+}
+/*
+.card .imgBox img {
+    max-width: 100%;
+    
+    transition: .5s;
+}
+
+.card:hover .imgBox img {
+    max-width: 50%;
+      
+}
+*/
+.card7 .contentBox7 {
+  position: relative;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 2;
+}
+
+.card7 .contentBox7 h3 {
+  font-size: 18px;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.card7 .contentBox7 .price7 {
+  font-size: 24px;
+  color: white;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.card7 .contentBox7 .buy7 {
+  position: relative;
+  top: 100px;
+  opacity: 0;
+  padding: 10px 30px;
+  margin-top: 15px;
+  color: #000000;
+  text-decoration: none;
+  background: #ffffff;
+  border-radius: 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: 0.5s;
+  padding-left: 20px;
+}
+
+.card7:hover .contentBox7 .buy7 {
+  top: 0;
+  opacity: 1;
+}
+
+.card8 {
+  position: relative;
+  width: 320px;
+  height: 480px;
+  background: #175c46d4;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.card8::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  width: 100%;
+  height: 100%;
+  background: #ffffff;;
+  transform: skewY(345deg);
+  transition: 0.5s;
+}
+
+.card8:hover::before {
+  top: -70%;
+  transform: skewY(390deg);
+}
+
+.card8::after {
+  content: "KURZE";
+  position: absolute;
+  bottom: 0;
+  left: 0px;
+  font-weight: 600;
+  font-size: 6em;
+  color: rgb(255 255 255 / 10%);;
+}
+
+.card8 .imgBox8 {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+  z-index: 1;
+}
+/*
+.card .imgBox img {
+    max-width: 100%;
+    
+    transition: .5s;
+}
+
+.card:hover .imgBox img {
+    max-width: 50%;
+      
+}
+*/
+.card8 .contentBox8 {
+  position: relative;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 2;
+}
+
+.card8 .contentBox8 h3 {
+  font-size: 18px;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.card8 .contentBox8 .price8 {
+  font-size: 24px;
+  color: white;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.card8 .contentBox8 .buy8 {
+  position: relative;
+  top: 100px;
+  opacity: 0;
+  padding: 10px 30px;
+  margin-top: 15px;
+  color: #000000;
+  text-decoration: none;
+  background: #ffffff;
+  border-radius: 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: 0.5s;
+  padding-left: 20px;
+}
+
+.card8:hover .contentBox8 .buy8 {
+  top: 0;
+  opacity: 1;
+}
+
+.card9{
+  position: relative;
+  width: 320px;
+  height: 480px;
+  background: #951919;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.card9::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  width: 100%;
+  height: 100%;
+  background: #ffffff;;
+  transform: skewY(345deg);
+  transition: 0.5s;
+}
+
+.card9:hover::before {
+  top: -70%;
+  transform: skewY(390deg);
+}
+
+.card9::after {
+  content: "MANT";
+  position: absolute;
+  bottom: 0;
+  left: 15px;
+  font-weight: 600;
+  font-size: 6em;
+  color: rgb(255 255 255 / 10%);;
+}
+
+.card9 .imgBox9 {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+  z-index: 1;
+}
+/*
+.card .imgBox img {
+    max-width: 100%;
+    
+    transition: .5s;
+}
+
+.card:hover .imgBox img {
+    max-width: 50%;
+      
+}
+*/
+.card9 .contentBox9 {
+  position: relative;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 2;
+}
+
+.card9 .contentBox9 h3 {
+  font-size: 18px;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.card9 .contentBox9 .price9 {
+  font-size: 24px;
+  color: white;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.card9 .contentBox9 .buy9 {
+  position: relative;
+  top: 100px;
+  opacity: 0;
+  padding: 10px 30px;
+  margin-top: 15px;
+  color: #000000;
+  text-decoration: none;
+  background: #ffffff;
+  border-radius: 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: 0.5s;
+  padding-left: 20px;
+}
+
+.card9:hover .contentBox9 .buy9 {
+  top: 0;
+  opacity: 1;
+}
+
+.card10 {
+  position: relative;
+  width: 320px;
+  height: 480px;
+  background: #85a767;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.card10::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  width: 100%;
+  height: 100%;
+  background: #ffffff;;
+  transform: skewY(345deg);
+  transition: 0.5s;
+}
+
+.card10:hover::before {
+  top: -70%;
+  transform: skewY(390deg);
+}
+
+.card10::after {
+  content: "CHUDU";
+  position: absolute;
+  bottom: 0;
+  left: -15px;
+  font-weight: 600;
+  font-size: 6em;
+  color: rgb(255 255 255 / 10%);;
+}
+
+
+.card10 .imgBox10 {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+  z-index: 1;
+}
+/*
+.card .imgBox img {
+    max-width: 100%;
+    
+    transition: .5s;
+}
+
+.card:hover .imgBox img {
+    max-width: 50%;
+      
+}
+*/
+.card10 .contentBox10 {
+  position: relative;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 2;
+}
+
+.card10 .contentBox10 h3 {
+  font-size: 18px;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.card10 .contentBox10 .price10 {
+  font-size: 24px;
+  color: white;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.card10 .contentBox10 .buy10 {
+  position: relative;
+  top: 100px;
+  opacity: 0;
+  padding: 10px 30px;
+  margin-top: 15px;
+  color: #000000;
+  text-decoration: none;
+  background: #ffffff;
+  border-radius: 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: 0.5s;
+  padding-left: 20px;
+}
+
+.card10:hover .contentBox10 .buy10 {
+  top: 0;
+  opacity: 1;
+}
+
+
+.mouse {
+  height: 300px;
+  width: auto;
+}
+.pizza{
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin: 30px;
+}
